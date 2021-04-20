@@ -1,0 +1,262 @@
+package com.journaldev.getfilesize;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+
+public class JavaGetFileSizeUsingApacheCommonsIO {
+
+	static final String FILE_NAME = "/Users/pankaj/Downloads/file.pdf";
+
+	public static void main(String[] args) {
+		File file = new File(FILE_NAME);
+
+		long fileSize = FileUtils.sizeOf(file);
+
+		System.out.println(fileSize + " bytes");
+	}
+}
+
+package com.journaldev.getfilesize;
+
+import java.io.File;
+
+public class JavaGetFileSize {
+
+	static final String FILE_NAME = "/Users/pankaj/Downloads/file.pdf";
+
+	public static void main(String[] args) {
+		File file = new File(FILE_NAME);
+		if (!file.exists() || !file.isFile()) return;
+
+		System.out.println(getFileSizeBytes(file));
+		System.out.println(getFileSizeKiloBytes(file));
+		System.out.println(getFileSizeMegaBytes(file));
+	}
+
+	private static String getFileSizeMegaBytes(File file) {
+		return (double) file.length() / (1024 * 1024) + " mb";
+	}
+	
+	private static String getFileSizeKiloBytes(File file) {
+		return (double) file.length() / 1024 + "  kb";
+	}
+
+	private static String getFileSizeBytes(File file) {
+		return file.length() + " bytes";
+	}
+}
+
+class DistanceBwPoint
+{
+	public static void main(String arg[])	
+	{
+            int x1,x2,y1,y2;
+	    double dis;
+	    x1=1;y1=1;x2=4;y2=4;
+	    dis=Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));	 	    
+            System.out.println("distancebetween"+"("+x1+","+y1+"),"+"("+x2+","+y2+")===>"+dis);
+	}
+}
+
+
+
+public static String reverse(String str) {
+        char[] charArr = str.toCharArray();
+        int size = charArr.length;
+        Stack stack = new Stack(size);
+
+        int i;
+        for(i = 0; i < size; ++i) {
+            stack.push(charArr[i]);
+        }
+
+        for(i = 0; i < size; ++i) {
+            charArr[i] = stack.pop();
+        }
+
+        return String.valueOf(charArr);
+}
+
+
+public class Power {
+
+    public static void main(String[] args) {
+
+        int base = 3, exponent = 4;
+
+        long result = 1;
+
+        for (;exponent != 0; --exponent)
+        {
+            result *= base;
+        }
+
+        System.out.println("Answer = " + result);
+    }
+}
+public class Power {
+
+    public static void main(String[] args) {
+
+        int base = 3, exponent = -4;
+        double result = Math.pow(base, exponent);
+
+        System.out.println("Answer = " + result);
+    }
+}
+
+// Java Program to swap two numbers  with
+// using temporary variable
+import java.io.*;
+ 
+class GFG {
+    public static void main(String[] args)
+    {
+        int x = 10;
+        int y = 5;
+ 
+        // Code to swap 'x' and 'y'
+        x = x * y; // x now becomes 50
+        y = x / y; // y becomes 10
+        x = x / y; // x becomes 5
+ 
+        System.out.println("After swaping:"
+                           + " x = " + x + ", y = " + y);
+    }
+}
+
+// Java Program to swap two numbers  without
+// using temporary variable
+import java.io.*;
+ 
+class Geeks {
+ 
+    public static void main(String a[])
+    {
+        int x = 10;
+        int y = 5;
+        x = x + y;
+        y = x - y;
+        x = x - y;
+        System.out.println("After swaping:"
+                           + " x = " + x + ", y = " + y);
+    }
+}
+ 
+
+// This code is reverse string without using function
+    import java.util.Scanner;  
+    class ReverseStringExample1  
+    {  
+    public static void main(String args[])  
+    {  
+    String s;  
+    Scanner sc=new Scanner(System.in);  
+    System.out.print("Enter a String: ");  
+    s=sc.nextLine();                    //reading string from user  
+    System.out.print("After reverse string is: ");  
+    for(int i=s.length();i>0;--i)                //i is the length of the string  
+    {  
+    System.out.print(s.charAt(i-1));            //printing the character at index i-1  
+    }  
+    }  
+    }  
+
+
+Example 1: Java Program to Check Alphabet using if else
+
+public class Alphabet {
+
+    public static void main(String[] args) {
+
+        char c = '*';
+
+        if( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+            System.out.println(c + " is an alphabet.");
+        else
+            System.out.println(c + " is not an alphabet.");
+    }
+}
+Basic to intermediate level questions
+1. Write a function to check whether a number is Prime or not.
+2. Write a function to check whether a character is alphabet.
+3. Display Fibonacci series. (Fibonacci series is a series where the next term is the sum of the
+previous two terms).
+4. Write a Java program to reverse a string without using String inbuilt function.
+5. How to swap two numbers without using temporary variable.
+
+
+Intermediate to advanced level questions
+6. How to get a file’s size in bytes?
+7. How to reverse a string using stack?
+8. Calculate the distance between two points?
+9. Calculate power of a number
+
+.
+Instructions: For your answers, exclude the target folder when zipping the project. Create only 1 spring
+boot project.
+1. Spring Boot Application Exam – Multi-threading, Web Scraping, RESTful Web Service, Caching
+a. Create a spring boot application that web scrapes data from a REST Client and save it to
+the database. Apply multi-threading when scraping data.
+b. URL: https://jsonplaceholder.typicode.com/
+i. Please go to Routes section and scrape posts and comments data.
+
+2. Create rest-end point that displays the posts and comments data.
+3. Implement Redis or any in-memory caching in the 2 Spring Boot Application.
+
+
+
+class Stack {
+    private int top;
+    private int capacity;
+    private char[] array;
+
+    public Stack(int capacity) {
+        this.capacity = capacity;
+        this.array = new char[capacity];
+        this.top = -1;
+    }
+
+    public boolean isFull() {
+        return this.top == this.capacity - 1;
+    }
+
+    public boolean isEmpty() {
+        return this.top == -1;
+    }
+
+    public void push(char value) {
+        if(!this.isFull()) {
+            this.array[++this.top] = value;
+        }
+    }
+
+    public char pop() {
+        return this.isEmpty()?'\u0000':this.array[this.top--];
+    }
+ public static String reverse(String str) {
+        char[] charArr = str.toCharArray();
+        int size = charArr.length;
+        Stack stack = new Stack(size);
+
+        int i;
+        for(i = 0; i < size; ++i) {
+            stack.push(charArr[i]);
+        }
+
+        for(i = 0; i < size; ++i) {
+            charArr[i] = stack.pop();
+        }
+
+        return String.valueOf(charArr);
+    }
+
+
+}
+public class Main {
+  public static void main(String[] args) {
+      String str = "MYDEVGEEK";
+      System.out.println(Stack.reverse(str));
+  }
+}
